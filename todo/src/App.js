@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <TodoList todos={this.props.todos} />
+        <TodoList completed={this.props.onCompleted} todos={this.props.todos} />
         <TodoForm addNewTodo={this.props.onNewTodoHandler} />
       </div>
     );
@@ -25,7 +25,8 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-    onNewTodoHandler: (todo) => dispatch(actions.addTodo(todo))
+    onNewTodoHandler: (todo) => dispatch(actions.addTodo(todo)),
+    onCompleted: (id) => dispatch(actions.updateCompleted(id))
   }
 }
 

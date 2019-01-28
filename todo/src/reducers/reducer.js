@@ -15,7 +15,13 @@ export default (state = initialState, action) => {
             const copiedState = [...state.todos];
             const newTodo = {value: action.todo, completed: false};
             copiedState.push(newTodo);
-            return {todos: copiedState}
+            return {todos: copiedState};
+        case actionTypes.UPDATE_COMPLETED:
+            const copiedTodos = [...state.todos];
+            const todoToUpdate = {...copiedTodos[action.id]}
+            todoToUpdate.completed = true;
+            copiedTodos.splice(action.id, 1, todoToUpdate);
+            return {todos: copiedTodos}
         default: 
             return state;
     }

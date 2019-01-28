@@ -1,10 +1,11 @@
 import React from 'react';
 
-const todoList = (props) => {
+import './TodoList.css';
 
+const todoList = (props) => {
         return (
         <div>
-            {props.todos.map((todo, i) => <p key={i}>{todo.value}</p>)}
+            {props.todos.map((todo, i) => <p className={todo.completed ? "Todo Completed": "Todo"} onClick={() => props.completed(i)} key={i}>{todo.value}</p>)}
         </div>
         )
 }

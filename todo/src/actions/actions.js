@@ -6,3 +6,10 @@ export const addTodo = (todo) => {
             todo: todo
         }
     }
+
+export const updateCompleted = (id) => {
+    return {
+        type: actionTypes.UPDATE_COMPLETED,
+        id: id
+    }
+}
