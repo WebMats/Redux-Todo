@@ -19,7 +19,9 @@ export default (state = initialState, action) => {
         case actionTypes.DELETE_TODO:
             const copiedList = [...state.todos];
             copiedList.splice(action.id, 1);
-            return {todos: copiedList}
+            return {todos: copiedList};
+        case actionTypes.POST_TODOS:
+            return {todos: action.todos};
         default: 
             return state;
     }

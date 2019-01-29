@@ -8,24 +8,22 @@ import TodoForm from './components/TodoForm/TodoForm';
 import './App.css';
 
 class App extends Component {
-  // state = {
-  //   todos: []
-  // }
 
-  // componentDidMount() {
-  //   const savedTodos = localStorage.getItem('todos');
-  //   if( savedTodos !== undefined) {
-  //     const newTodos = JSON.parse(savedTodos);
-  //     this.setState({todos: newTodos})
-  //   }
-  // }
-  // componentDidUpdate(prevProps) {
-  //   if (!(this.props.todos === prevProps.todos)) {
-  //     const toSave = JSON.stringify(this.props.todos);
-  //     localStorage.setItem("todos", toSave);
-  //     this.setState({todos: this.props.todos})
-  //   }
-  // }
+  componentDidMount() {
+    let savedTodos = localStorage.getItem("todos")
+    if (savedTodos !== null) {
+      savedTodos = JSON.parse(savedTodos);
+      this.props.onPostTodos(savedTodos);
+  }
+  }
+
+  componentDidUpdate(prevProps) {
+    let newTodos = this.props.todos;
+    if (newTodos !== prevProps.todos) {
+      newTodos = JSON.stringify(newTodos);
+      localStorage.setItem('todos', newTodos)
+    }
+  }
 
   render() {
     return (
@@ -48,6 +46,7 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
   return {
+    onPostTodos: (todos) => dispatch(actions.postTodos(todos)),
     onNewTodoHandler: (todo) => dispatch(actions.addTodo(todo)),
     onCompleted: (id) => dispatch(actions.updateCompleted(id)),
     onDelete: (id) => dispatch(actions.deleteTodo(id))

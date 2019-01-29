@@ -20,3 +20,11 @@ export const deleteTodo = (id) => {
         id: id
     }
 }
+
+export const postTodos = (todos) => {
+    return {
+        type: actionTypes.POST_TODOS,
+        todos: todos
+    }
+}
+
