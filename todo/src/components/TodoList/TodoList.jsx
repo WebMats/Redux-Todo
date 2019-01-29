@@ -12,8 +12,6 @@ const todoList = (props) => {
                     </p>
                     <span onClick={() => props.deleted(i)}>x</span>
                 </div>
-                                        
-                                        
                                                 ))}
         </React.Fragment>
         )
