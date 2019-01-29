@@ -8,6 +8,25 @@ import TodoForm from './components/TodoForm/TodoForm';
 import './App.css';
 
 class App extends Component {
+  // state = {
+  //   todos: []
+  // }
+
+  // componentDidMount() {
+  //   const savedTodos = localStorage.getItem('todos');
+  //   if( savedTodos !== undefined) {
+  //     const newTodos = JSON.parse(savedTodos);
+  //     this.setState({todos: newTodos})
+  //   }
+  // }
+  // componentDidUpdate(prevProps) {
+  //   if (!(this.props.todos === prevProps.todos)) {
+  //     const toSave = JSON.stringify(this.props.todos);
+  //     localStorage.setItem("todos", toSave);
+  //     this.setState({todos: this.props.todos})
+  //   }
+  // }
+
   render() {
     return (
       <div className="App">
