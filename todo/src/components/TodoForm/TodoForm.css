@@ -1,0 +1,23 @@
+.TodoForm {
+    margin-top: 2rem;
+}
+
+.SubmitButton {
+    margin: 2rem 0;
+    text-transform: uppercase;
+    padding: 5px;
+    width: 20rem;
+    height: 3.2rem;
+    border-radius: 6px;
+    background-color: rgb(83, 247, 165);
+    border: 1px solid rgb(83, 247, 165);
+    color: rgb(88, 88, 88);
+    font-weight: 700;
+}
+.TodoForm input {
+    width: 17rem;
+    height: 2.8rem;
+    text-align: center;
+    border-radius: 12px;
+    border: none;
+}

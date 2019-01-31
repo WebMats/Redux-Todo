@@ -13,3 +13,18 @@ export const updateCompleted = (id) => {
         id: id
     }
 }
+
+export const deleteTodo = (id) => {
+    return {
+        type: actionTypes.DELETE_TODO,
+        id: id
+    }
+}
+
+export const postTodos = (todos) => {
+    return {
+        type: actionTypes.POST_TODOS,
+        todos: todos
+    }
+}
+

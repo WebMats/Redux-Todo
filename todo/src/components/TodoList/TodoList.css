@@ -1,3 +1,31 @@
 .Todo.Completed {
     color:red;
+    text-decoration: line-through;
+}
+.Todo {
+    margin: 4rem 1rem;
+    font-size: 2rem;
+}
+.TodoContainer > span {
+    width: 2rem;
+    height: 2rem;
+    background-color: darkred;
+    color:white;
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 1.4rem;
+    padding: 2px 0px 0px 2px;
+}
+.TodoContainer > span:hover {
+    cursor: pointer;
+}
+.TodoContainer {
+    height: 4.8rem;
+    width: 35rem;
+    margin: 1rem auto;
+    background-color: white;
+    padding: 1.4rem;
+    position: relative;
 }
